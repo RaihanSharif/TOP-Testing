@@ -4,11 +4,10 @@ function capitalize(strIn) {
 }
 
 function reverseString(strIn) {
-  let temp = "";
-  const strLen = strIn.length - 1;
-  for (let i = strLen; i >= 0; i--) {
-    temp = temp.concat(strIn[i]);
+  if (strIn === "" || strIn.length === 1) {
+    return strIn;
   }
-  return temp;
+
+  return reverseString(strIn.substring(1)) + strIn[0];
 }
 export { capitalize, reverseString };
