@@ -18,4 +18,31 @@ const calculator = {
   div: (x, y) => x / y,
 };
 
-export { capitalize, reverseString, calculator };
+function caesarCipher(strIn, shiftVal) {
+  let cipherText = "";
+  for (let i = 0; i < strIn.length; i++) {
+    const charCode = strIn.charCodeAt(i);
+    let newCode = 0;
+    // lowercase letters
+    if (charCode >= 97 && charCode <= 122) {
+      newCode = (charCode + shiftVal) % 123;
+      if (newCode < 97) {
+        newCode = newCode + 97;
+      }
+    } else if (charCode >= 65 && charCode <= 90) {
+      newCode = (charCode + shiftVal) % 91;
+      if (newCode < 65) {
+        newCode = newCode + 65;
+      }
+    } else {
+      cipherText = cipherText.concat(strIn[i]);
+    }
+
+    cipherText = cipherText.concat(String.fromCharCode(newCode));
+  }
+  return cipherText;
+}
+
+// caesarCipher("X,YZ");
+
+export { capitalize, reverseString, calculator, caesarCipher };

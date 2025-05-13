@@ -1,4 +1,4 @@
-import { reverseString } from "./index";
+import { reverseString } from "./index.js";
 
 describe.skip("reverse string tests", () => {
   // describe block to group tests together
