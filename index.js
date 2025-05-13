@@ -29,16 +29,17 @@ function caesarCipher(strIn, shiftVal) {
       if (newCode < 97) {
         newCode = newCode + 97;
       }
+      cipherText = cipherText.concat(String.fromCharCode(newCode));
     } else if (charCode >= 65 && charCode <= 90) {
       newCode = (charCode + shiftVal) % 91;
       if (newCode < 65) {
         newCode = newCode + 65;
       }
+      cipherText = cipherText.concat(String.fromCharCode(newCode));
     } else {
-      cipherText = cipherText.concat(strIn[i]);
+      const nonLetterChar = String.fromCharCode(charCode);
+      cipherText = cipherText.concat(nonLetterChar);
     }
-
-    cipherText = cipherText.concat(String.fromCharCode(newCode));
   }
   return cipherText;
 }

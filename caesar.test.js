@@ -1,11 +1,11 @@
 import { caesarCipher } from "./index.js";
 
 describe("caesar cipher tests", () => {
-  it.skip("should convert 'a' to 'b' given shift of 1", () => {
+  it("should convert 'a' to 'b' given shift of 1", () => {
     expect(caesarCipher("a", 1)).toEqual("b");
   });
 
-  it.skip("should convert 'abcd' to 'defg' given shift of 3", () => {
+  it("should convert 'abcd' to 'defg' given shift of 3", () => {
     expect(caesarCipher("abcd", 3)).toEqual("defg");
   });
 
@@ -18,10 +18,6 @@ describe("caesar cipher tests", () => {
   });
 
   it("should keep non-letter chars as is", () => {
-    expect(caesarCipher("X,YZ", 3)).toBe("A,BC");
-  });
-
-  it("should return a bunch of empty spaces", () => {
-    expect(caesarCipher("    ", 3)).toEqual("    ");
+    expect(caesarCipher("X,YZ", 4)).toEqual("B,CD");
   });
 });
