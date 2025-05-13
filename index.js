@@ -10,4 +10,9 @@ function reverseString(strIn) {
 
   return reverseString(strIn.substring(1)) + strIn[0];
 }
-export { capitalize, reverseString };
+
+const calculator = {
+  add: (x, y) => x + y,
+};
+
+export { capitalize, reverseString, calculator };
